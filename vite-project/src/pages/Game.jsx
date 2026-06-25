@@ -1,5 +1,6 @@
 import { useState } from "react";
 import lucky from "../assets/lucky.gif";
+import bgMusic from "../assets/bg-music.mp3";
 
 const dialogue = {
   intro: {
@@ -21,27 +22,28 @@ const dialogue = {
   angry: {
     text: "Liar, it's been ages!",
     choices: {
-      yes: "apology",
-      no: "ignore"
+      yes: "happy_end",
+      no: "sad_end"
     }
   },
 
   happy_end: {
-    text: "Yay! Let's search the garden together!"
+    text: "I know... Do you like my new place?",
+    choices: {
+      yes: "thanks",
+      no: "sad_end"
+    }
   },
 
   sad_end: {
-    text: "Aww... maybe another time."
+    text: "Shady.. I love you too"
   },
 
-  apology: {
-    text: "Hmm... I forgive you, but don't disappear again!"
-  },
-
-  ignore: {
-    text: "..."
+  thanks: {
+    text: "Thank you oh and by the way I love you!"
   }
 };
+
 
 function Game() {
   const [scene, setScene] = useState("intro");
@@ -51,6 +53,12 @@ function Game() {
   return (
     <div className="game">
       <img src={lucky} alt="Cat" className="character" />
+<audio
+  src={bgMusic}
+  autoPlay
+  loop
+  muted={false}
+/>
 
       <div className="dialogue-box">
         <h2>Lucky</h2>
@@ -71,6 +79,7 @@ function Game() {
         </div>
       </div>
     </div>
+    
   );
 }
 

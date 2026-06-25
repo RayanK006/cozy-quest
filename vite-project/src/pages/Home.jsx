@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+// import bgMusic from "../assets/bg-music.mp3";
 
 function Home() {
+ 
   return (
+    
     <div className="menu">
   <h1>🌸 Cozy Quest</h1>
 
