@@ -1,14 +1,14 @@
 import { useState } from "react";
-
+import "./App.css";
 function App() {
-  const [xp, setXp] = useState(0);
+  const [xp, setXp] = useState(0); //stores points
 
   // Level system
-  const level = Math.floor(xp / 50);
+  const level = Math.floor(xp / 30); //every level goes up by 50
 
-  // Plant growth
-  const plants = ["🌱", "🌿", "🌳"];
-  const plant = plants[Math.min(level, plants.length - 1)];
+  
+  const plants = ["🌱", "🌿", "🌳"]; //what it changes to every level
+  const plant = plants[Math.min(level, plants.length - 1)]; //length as in index(emojis)
 
   return (
     <div style={{ textAlign: "center", fontFamily: "Arial" }}>
@@ -29,6 +29,14 @@ function App() {
         }}
       >
         🌟 Earn XP
+      </button>
+    <br/>
+    <br/>
+    <br/>
+
+    <button
+      >
+        Start Game ?
       </button>
     </div>
   );
